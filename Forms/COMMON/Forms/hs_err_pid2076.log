@@ -1,0 +1,322 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff98a369932, pid=2076, tid=6516
+#
+# JRE version: 6.0_35-b10
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (20.10-b01 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# C  [ntdll.dll+0xa9932]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000006249800):  JavaThread "main" [_thread_in_Java, id=6516, stack(0x0000000000050000,0x0000000000150000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0xffffffffffffffff
+
+Registers:
+RAX=0x0000000000131001, RBX=0x0000000000000000, RCX=0x00000000001449c8, RDX=0x00000000001448e0
+RSP=0x0000000000144868, RBP=0x00007ff9798118f0, RSI=0x0000000000000023, RDI=0x0000000000000003
+R8 =0x0000000000262000, R9 =0x0000000000144870, R10=0x0000000000000000, R11=0x00007ff98a294157
+R12=0x0000000000000050, R13=0x0000000000000000, R14=0x00007ff9798118f0, R15=0x0000000000000000
+RIP=0x00007ff98a369932, EFLAGS=0x0000000000010202
+
+Top of Stack: (sp=0x0000000000144868)
+0x0000000000144868:   0000000000000202 00007ff98a2f23de
+0x0000000000144878:   0000000000000540 0000000000000000
+0x0000000000144888:   00007ff98a230000 0000000006249800
+0x0000000000144898:   0000000000000000 00000000106cac30
+0x00000000001448a8:   0000000000000510 0000000010d46d40
+0x00000000001448b8:   00007ff98a239e50 0000000000000510
+0x00000000001448c8:   0000000010d46d40 0000000000131000
+0x00000000001448d8:   000000000000000a 0000000000150000
+0x00000000001448e8:   000000006daa2996 00000003108a6410
+0x00000000001448f8:   0000000010d46d40 00000000148df788
+0x0000000000144908:   0000000000000050 00000000148df788
+0x0000000000144918:   000000006da90177 0000000000000001
+0x0000000000144928:   0000000000000002 00000000108a6410
+0x0000000000144938:   0000000000000023 0000000000000000
+0x0000000000144948:   0000000000144b50 0000000000144b80
+0x0000000000144958:   0000000009460000 00007ff9798118f0 
+
+Instructions: (pc=0x00007ff98a369932)
+0x00007ff98a369912:   cc cc cc cc 66 66 0f 1f 84 00 00 00 00 00 48 9c
+0x00007ff98a369922:   d9 b9 00 01 00 00 c7 81 02 01 00 00 00 00 00 00
+0x00007ff98a369932:   0f 29 b1 00 02 00 00 0f 29 b9 10 02 00 00 44 0f
+0x00007ff98a369942:   29 81 20 02 00 00 44 0f 29 89 30 02 00 00 44 0f 
+
+
+Register to memory mapping:
+
+RAX=0x0000000000131001 is pointing into the stack for thread: 0x0000000006249800
+RBX=0x0000000000000000 is an unknown value
+RCX=0x00000000001449c8 is pointing into the stack for thread: 0x0000000006249800
+RDX=0x00000000001448e0 is pointing into the stack for thread: 0x0000000006249800
+RSP=0x0000000000144868 is pointing into the stack for thread: 0x0000000006249800
+RBP=0x00007ff9798118f0 is an unknown value
+RSI=0x0000000000000023 is an unknown value
+RDI=0x0000000000000003 is an unknown value
+R8 =0x0000000000262000 is an unknown value
+R9 =0x0000000000144870 is pointing into the stack for thread: 0x0000000006249800
+R10=0x0000000000000000 is an unknown value
+R11=0x00007ff98a294157 is an unknown value
+R12=0x0000000000000050 is an unknown value
+R13=0x0000000000000000 is an unknown value
+R14=0x00007ff9798118f0 is an unknown value
+R15=0x0000000000000000 is an unknown value
+
+
+Stack: [0x0000000000050000,0x0000000000150000],  sp=0x0000000000144868,  free space=978k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [ntdll.dll+0xa9932]  KiRaiseUserExceptionDispatcher+0x72
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+v  blob 0x000000000949707f
+j  java.util.jar.Attributes.putValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;+13
+j  java.util.jar.Attributes.read(Ljava/util/jar/Manifest$FastInputStream;[B)V+301
+j  java.util.jar.Manifest.read(Ljava/io/InputStream;)V+291
+j  sun.security.util.SignatureFileVerifier.processImpl(Ljava/util/Hashtable;Ljava/util/List;)V+20
+j  sun.security.util.SignatureFileVerifier.process(Ljava/util/Hashtable;Ljava/util/List;)V+9
+j  java.util.jar.JarVerifier.processEntry(Lsun/security/util/ManifestEntryVerifier;)V+387
+j  java.util.jar.JarVerifier.update(I[BIILsun/security/util/ManifestEntryVerifier;)V+39
+j  java.util.jar.JarFile.initializeVerifier()V+107
+j  java.util.jar.JarFile.getInputStream(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;+25
+j  sun.misc.URLClassPath$JarLoader$2.getInputStream()Ljava/io/InputStream;+11
+j  sun.misc.Resource.cachedInputStream()Ljava/io/InputStream;+9
+j  sun.misc.Resource.getByteBuffer()Ljava/nio/ByteBuffer;+1
+j  java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;Z)Ljava/lang/Class;+182
+j  java.net.URLClassLoader.access$000(Ljava/net/URLClassLoader;Ljava/lang/String;Lsun/misc/Resource;Z)Ljava/lang/Class;+4
+j  java.net.URLClassLoader$1.run()Ljava/lang/Object;+44
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class;+13
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+47
+j  sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+41
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class;+3
+v  ~StubRoutines::call_stub
+j  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;Z)Ljava/lang/Class;+0
+j  java.lang.ClassLoader.defineClassCond(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Z)Ljava/lang/Class;+32
+j  java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class;+9
+j  java.security.SecureClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/CodeSource;)Ljava/lang/Class;+27
+j  java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;Z)Ljava/lang/Class;+369
+j  java.net.URLClassLoader.access$000(Ljava/net/URLClassLoader;Ljava/lang/String;Lsun/misc/Resource;Z)Ljava/lang/Class;+4
+j  java.net.URLClassLoader$1.run()Ljava/lang/Object;+44
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class;+13
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+47
+j  sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+41
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class;+3
+v  ~StubRoutines::call_stub
+j  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;Z)Ljava/lang/Class;+0
+j  java.lang.ClassLoader.defineClassCond(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Z)Ljava/lang/Class;+32
+j  java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class;+9
+j  java.security.SecureClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/CodeSource;)Ljava/lang/Class;+27
+j  java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;Z)Ljava/lang/Class;+369
+j  java.net.URLClassLoader.access$000(Ljava/net/URLClassLoader;Ljava/lang/String;Lsun/misc/Resource;Z)Ljava/lang/Class;+4
+j  java.net.URLClassLoader$1.run()Ljava/lang/Object;+44
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class;+13
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+47
+j  sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+41
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class;+3
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000010520000 JavaThread "AWT-Shutdown" [_thread_blocked, id=8176, stack(0x0000000015560000,0x0000000015660000)]
+  0x000000001053c800 JavaThread "AWT-Windows" daemon [_thread_in_native, id=7228, stack(0x00000000113a0000,0x00000000114a0000)]
+  0x000000001053a000 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=1704, stack(0x0000000010550000,0x0000000010650000)]
+  0x000000000e949800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=8080, stack(0x000000000fac0000,0x000000000fbc0000)]
+  0x000000000e935800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=1820, stack(0x000000000f9c0000,0x000000000fac0000)]
+  0x000000000e930800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=1552, stack(0x000000000f8c0000,0x000000000f9c0000)]
+  0x000000000e92a800 JavaThread "Attach Listener" daemon [_thread_blocked, id=7200, stack(0x000000000f7c0000,0x000000000f8c0000)]
+  0x000000000e929800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=3656, stack(0x000000000f6c0000,0x000000000f7c0000)]
+  0x000000000e8c4800 JavaThread "Finalizer" daemon [_thread_blocked, id=7588, stack(0x000000000f5c0000,0x000000000f6c0000)]
+  0x000000000e8c1800 JavaThread "Reference Handler" daemon [_thread_blocked, id=7132, stack(0x000000000f4c0000,0x000000000f5c0000)]
+=>0x0000000006249800 JavaThread "main" [_thread_in_Java, id=6516, stack(0x0000000000050000,0x0000000000150000)]
+
+Other Threads:
+  0x000000000e8ad800 VMThread [stack: 0x000000000f3c0000,0x000000000f4c0000] [id=6440]
+  0x000000000e95c800 WatcherThread [stack: 0x000000000fbc0000,0x000000000fcc0000] [id=4268]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 152896K, used 13109K [0x0000000755560000, 0x0000000760000000, 0x0000000800000000)
+  eden space 131072K, 10% used [0x0000000755560000,0x000000075622d5d0,0x000000075d560000)
+  from space 21824K, 0% used [0x000000075eab0000,0x000000075eab0000,0x0000000760000000)
+  to   space 21824K, 0% used [0x000000075d560000,0x000000075d560000,0x000000075eab0000)
+ PSOldGen        total 349568K, used 0K [0x0000000600000000, 0x0000000615560000, 0x0000000755560000)
+  object space 349568K, 0% used [0x0000000600000000,0x0000000600000000,0x0000000615560000)
+ PSPermGen       total 21248K, used 9120K [0x00000005fae00000, 0x00000005fc2c0000, 0x0000000600000000)
+  object space 21248K, 42% used [0x00000005fae00000,0x00000005fb6e8028,0x00000005fc2c0000)
+
+Code Cache  [0x0000000009460000, 0x00000000096d0000, 0x000000000c460000)
+ total_blobs=362 nmethods=34 adapters=282 free_code_cache=49795904 largest_free_block=11328
+
+Dynamic libraries:
+0x0000000000400000 - 0x00000000007de000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\frmbld.exe
+0x00007ff98a2c0000 - 0x00007ff98a48f000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ff988700000 - 0x00007ff9887ad000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ff986870000 - 0x00007ff986a8e000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ff984c30000 - 0x00007ff984caa000 	C:\Windows\system32\apphelp.dll
+0x00007ff979630000 - 0x00007ff979ab2000 	C:\Windows\AppPatch\AppPatch64\AcLayers.DLL
+0x00007ff98a220000 - 0x00007ff98a2be000 	C:\Windows\System32\msvcrt.dll
+0x00007ff987940000 - 0x00007ff987aa6000 	C:\Windows\System32\USER32.dll
+0x00007ff986dd0000 - 0x00007ff986dee000 	C:\Windows\System32\win32u.dll
+0x00007ff988380000 - 0x00007ff9883b4000 	C:\Windows\System32\GDI32.dll
+0x00007ff986b90000 - 0x00007ff986d14000 	C:\Windows\System32\gdi32full.dll
+0x00007ff989ef0000 - 0x00007ff989f42000 	C:\Windows\System32\SHLWAPI.dll
+0x00007ff989f50000 - 0x00007ff98a216000 	C:\Windows\System32\combase.dll
+0x00007ff986a90000 - 0x00007ff986b84000 	C:\Windows\System32\ucrtbase.dll
+0x00007ff9887b0000 - 0x00007ff9888cf000 	C:\Windows\System32\RPCRT4.dll
+0x00007ff987110000 - 0x00007ff98717c000 	C:\Windows\System32\bcryptPrimitives.dll
+0x0000000180000000 - 0x0000000180003000 	C:\Windows\SYSTEM32\sfc.dll
+0x00007ff97f9a0000 - 0x00007ff97fa27000 	C:\Windows\SYSTEM32\WINSPOOL.DRV
+0x00007ff986680000 - 0x00007ff9866ab000 	C:\Windows\SYSTEM32\bcrypt.dll
+0x00007ff97e9f0000 - 0x00007ff97ea01000 	C:\Windows\SYSTEM32\sfc_os.DLL
+0x00007ff97b420000 - 0x00007ff97b431000 	C:\Windows\SYSTEM32\SortWindows61.dll
+0x00007ff987fa0000 - 0x00007ff987fce000 	C:\Windows\System32\IMM32.DLL
+0x00000000669f0000 - 0x0000000066a65000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\CA.dll
+0x00007ff987fd0000 - 0x00007ff988109000 	C:\Windows\System32\ole32.dll
+0x0000000010000000 - 0x000000001014b000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\oracore11.dll
+0x0000000066070000 - 0x000000006609b000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\mmc.dll
+0x00007ff988310000 - 0x00007ff988369000 	C:\Windows\System32\sechost.dll
+0x00007ff988690000 - 0x00007ff9886fa000 	C:\Windows\System32\WS2_32.dll
+0x0000000066030000 - 0x0000000066065000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\mmi.dll
+0x0000000065fa0000 - 0x0000000065fcf000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\mmw.dll
+0x00007ff9883c0000 - 0x00007ff988480000 	C:\Windows\System32\OLEAUT32.dll
+0x0000000002770000 - 0x0000000002870000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\oranls11.dll
+0x00007ff987ef0000 - 0x00007ff987f92000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ff986fc0000 - 0x00007ff98705c000 	C:\Windows\System32\msvcp_win.dll
+0x0000000065f70000 - 0x0000000065f92000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\nn.dll
+0x00007ff988370000 - 0x00007ff988378000 	C:\Windows\System32\PSAPI.DLL
+0x0000000002870000 - 0x0000000002aa1000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\oracommon11.dll
+0x0000000002ab0000 - 0x00000000037fa000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\orageneric11.dll
+0x00000000007e0000 - 0x0000000000848000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\orasql11.dll
+0x0000000065220000 - 0x0000000065247000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\UIDC.dll
+0x0000000065120000 - 0x00000000651c1000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\UIREM.dll
+0x00007ff9888e0000 - 0x00007ff989de5000 	C:\Windows\System32\SHELL32.dll
+0x0000000003800000 - 0x0000000003945000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\UIW.dll
+0x00007ff9867c0000 - 0x00007ff986802000 	C:\Windows\System32\cfgmgr32.dll
+0x00007ff987180000 - 0x00007ff987853000 	C:\Windows\System32\windows.storage.dll
+0x00007ff989df0000 - 0x00007ff989eea000 	C:\Windows\System32\comdlg32.dll
+0x00007ff986740000 - 0x00007ff98678c000 	C:\Windows\System32\powrprof.dll
+0x00007ff986d20000 - 0x00007ff986dc8000 	C:\Windows\System32\shcore.dll
+0x0000000065200000 - 0x000000006521c000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\UIIM.dll
+0x00007ff9867b0000 - 0x00007ff9867bf000 	C:\Windows\System32\kernel.appcore.dll
+0x00000000652f0000 - 0x0000000065311000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\UAT.dll
+0x00007ff986790000 - 0x00007ff9867a4000 	C:\Windows\System32\profapi.dll
+0x0000000000b20000 - 0x0000000000b2a000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\UTC.dll
+0x0000000000b30000 - 0x0000000000b3e000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\UTJ.dll
+0x0000000000b40000 - 0x0000000000b59000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\UTL.dll
+0x0000000064e30000 - 0x0000000064f6a000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\VGS.dll
+0x0000000000b60000 - 0x0000000000b65000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\obs.dll
+0x00000000669e0000 - 0x00000000669e6000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\D2SC.dll
+0x0000000003950000 - 0x0000000003955000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\dfc.dll
+0x0000000003960000 - 0x0000000003c3d000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\DE.dll
+0x00000000652b0000 - 0x00000000652e7000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\UCOL.dll
+0x00000000660b0000 - 0x00000000660bf000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\mma.dll
+0x0000000066000000 - 0x0000000066021000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\mms.dll
+0x0000000003c40000 - 0x0000000004067000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\oraclient11.dll
+0x0000000065270000 - 0x00000000652a7000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\UIA.dll
+0x0000000065f00000 - 0x0000000065f57000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\ROS.dll
+0x00007ff9878c0000 - 0x00007ff9878dc000 	C:\Windows\System32\imagehlp.dll
+0x00007ff97b5d0000 - 0x00007ff97b5d9000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x0000000004070000 - 0x0000000004077000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\orauts.dll
+0x0000000065fe0000 - 0x0000000065fea000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\mmv.dll
+0x00007ff984a00000 - 0x00007ff984a23000 	C:\Windows\SYSTEM32\WINMM.dll
+0x0000000004080000 - 0x000000000409d000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\oraunls11.dll
+0x00000000040a0000 - 0x00000000040d5000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\uiole.dll
+0x00000000040e0000 - 0x00000000045d9000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\orapls11.dll
+0x00000000045e0000 - 0x000000000461b000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\orasnls11.dll
+0x00007ff982270000 - 0x00007ff98231c000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_5.82.14393.2457_none_a13eaee9d8fd5c07\COMCTL32.dll
+0x0000000004620000 - 0x0000000004900000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\oraxml11.dll
+0x0000000004900000 - 0x0000000004d98000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\oran11.dll
+0x0000000004da0000 - 0x0000000004dc1000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\orancrypt11.dll
+0x0000000004dd0000 - 0x0000000004e05000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\orantcp11.dll
+0x0000000004e10000 - 0x0000000004e86000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\oranl11.dll
+0x0000000004e90000 - 0x0000000004f60000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\libmmd.dll
+0x0000000004f60000 - 0x0000000005176000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\orannzsbb11.dll
+0x0000000005180000 - 0x00000000051fe000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\oraocr11.dll
+0x0000000005200000 - 0x0000000005286000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\orahasgen11.dll
+0x0000000005290000 - 0x000000000549d000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\orazt11.dll
+0x00000000054a0000 - 0x00000000058ce000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\oraplp11.dll
+0x00000000058d0000 - 0x00000000058ec000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\oraplc11.dll
+0x0000000065250000 - 0x000000006526e000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\UICC.dll
+0x00000000058f0000 - 0x00000000058f7000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\oravsn11.dll
+0x0000000005900000 - 0x0000000005b18000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\oraldapclnt11.dll
+0x0000000005b20000 - 0x0000000005b7a000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\oranro11.dll
+0x00007ff97afb0000 - 0x00007ff97afd0000 	C:\Windows\SYSTEM32\AVIFIL32.dll
+0x00007ff9849a0000 - 0x00007ff9849cb000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x0000000005b80000 - 0x0000000005bd2000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\oranldap11.dll
+0x0000000005be0000 - 0x0000000005be7000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\orancds11.dll
+0x0000000005bf0000 - 0x0000000005bfc000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\oranhost11.dll
+0x0000000005c00000 - 0x0000000005c0f000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\orantns11.dll
+0x0000000005c10000 - 0x0000000005cbd000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\oraztkg11.dll
+0x00007ff980c40000 - 0x00007ff980c58000 	C:\Windows\SYSTEM32\msvcirt.dll
+0x0000000005cc0000 - 0x0000000005ccc000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\oraslax11.dll
+0x0000000005cd0000 - 0x0000000005d38000 	D:\Oracle\Middleware\Oracle_FRHome1\BIN\oraocrb11.dll
+0x00007ff97af60000 - 0x00007ff97af78000 	C:\Windows\SYSTEM32\NETAPI32.dll
+0x00007ff985d40000 - 0x00007ff985d78000 	C:\Windows\SYSTEM32\iphlpapi.dll
+0x00007ff9838b0000 - 0x00007ff9838bc000 	C:\Windows\SYSTEM32\Secur32.dll
+0x00007ff97ab60000 - 0x00007ff97ab89000 	C:\Windows\SYSTEM32\MSVFW32.dll
+0x00007ff97ab40000 - 0x00007ff97ab5c000 	C:\Windows\SYSTEM32\MSACM32.dll
+0x00007ff984110000 - 0x00007ff984129000 	C:\Windows\SYSTEM32\SAMCLI.DLL
+0x00007ff9863a0000 - 0x00007ff9863cc000 	C:\Windows\SYSTEM32\SSPICLI.DLL
+0x00007ff985d80000 - 0x00007ff985d8d000 	C:\Windows\SYSTEM32\NETUTILS.DLL
+0x00007ff985e70000 - 0x00007ff985eaf000 	C:\Windows\SYSTEM32\LOGONCLI.DLL
+0x00007ff984fd0000 - 0x00007ff985065000 	C:\Windows\system32\uxtheme.dll
+0x00007ff9881b0000 - 0x00007ff98830b000 	C:\Windows\System32\MSCTF.dll
+0x00007ff984440000 - 0x00007ff984466000 	C:\Windows\system32\dwmapi.dll
+0x00007ff986610000 - 0x00007ff986666000 	C:\Windows\SYSTEM32\WINSTA.dll
+0x00007ff988110000 - 0x00007ff9881af000 	C:\Windows\System32\clbcatq.dll
+0x00007ff974da0000 - 0x00007ff974de9000 	C:\Windows\system32\dataexchange.dll
+0x00007ff984580000 - 0x00007ff9846d1000 	C:\Windows\system32\dcomp.dll
+0x00007ff982c00000 - 0x00007ff982eb6000 	C:\Windows\system32\d3d11.dll
+0x00007ff985830000 - 0x00007ff9858cf000 	C:\Windows\system32\dxgi.dll
+0x00007ff985220000 - 0x00007ff985333000 	C:\Windows\system32\twinapi.appcore.dll
+0x00007ff976ae0000 - 0x00007ff976b4f000 	C:\Windows\SYSTEM32\MMDevAPI.DLL
+0x00007ff9853a0000 - 0x00007ff9853c8000 	C:\Windows\SYSTEM32\DEVOBJ.dll
+0x00007ff983580000 - 0x00007ff983705000 	C:\Windows\SYSTEM32\PROPSYS.dll
+0x000000006d8b0000 - 0x000000006e069000 	D:\Oracle\Middleware\Oracle_FRHome1\jdk\jre\bin\server\jvm.dll
+0x000000006d820000 - 0x000000006d82e000 	D:\Oracle\Middleware\Oracle_FRHome1\jdk\jre\bin\verify.dll
+0x000000006d450000 - 0x000000006d477000 	D:\Oracle\Middleware\Oracle_FRHome1\jdk\jre\bin\java.dll
+0x000000006d870000 - 0x000000006d882000 	D:\Oracle\Middleware\Oracle_FRHome1\jdk\jre\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Dsun.java2d.noddraw=true -Xnohup -Xbootclasspath/p:D:\Oracle\Middleware\Oracle_FRHome1\vbroker4\lib\vbjboot.jar 
+java_command: <unknown>
+Launcher Type: generic
+
+Environment Variables:
+PATH=C:\oraclexe\app\oracle\product\11.2.0\server\bin;;D:\Oracle\Middleware\Oracle_FRHome1\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Oracle\Middleware\Oracle_FRHome1\opmn\bin;D:\Oracle\Middleware\Oracle_FRHome1\opmn\lib;D:\Oracle\Middleware\Oracle_FRHome1\perl\bin;C:\instantclient_19_12;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;
+USERNAME=Administrator
+LD_LIBRARY_PATH=D:\Oracle\Middleware\Oracle_FRHome1\lib
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 63 Stepping 2, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows NT 6.1 , 64 bit Build 7600 
+
+CPU:total 8 (2 cores per cpu, 1 threads per core) family 6 model 63 stepping 2, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt
+
+Memory: 4k page, physical 33553380k(27736396k free), swap 38534116k(30127992k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (20.10-b01) for windows-amd64 JRE (1.6.0_35-b10), built on Aug 28 2012 16:50:10 by "java_re" with MS VC++ 8.0 (VS2005)
+
+time: Wed Dec 01 17:33:24 2021
+elapsed time: 383 seconds
+
